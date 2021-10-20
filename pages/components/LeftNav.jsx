@@ -27,8 +27,8 @@ export default function LandingPage() {
 				<Grid item>
 					<h1>danceFinder</h1>
 				</Grid>
-				<Grid item />
-				<Grid item />
+				{/* <Grid item />
+				<Grid item /> */}
 				<Grid item>
 					<Button variant='contained' endIcon={<AccessTimeIcon />}>
 						Home
@@ -54,9 +54,9 @@ export default function LandingPage() {
 						Media
 					</Button>
 				</Grid>
+				{/* <Grid item />
 				<Grid item />
-				<Grid item />
-				<Grid item />
+				<Grid item /> */}
 				<Grid item>
 					<Button variant='contained' endIcon={<AccessTimeIcon />}>
 						Media
