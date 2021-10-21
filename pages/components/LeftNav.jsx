@@ -1,5 +1,7 @@
-import { Button, Box, Grid } from '@mui/material'
+import Link from 'next/link'
+
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { Button, Box, Grid } from '@mui/material'
 import { makeStyles } from '@material-ui/core'
 
 const useStyle = makeStyles((theme) => {
@@ -12,7 +14,7 @@ const useStyle = makeStyles((theme) => {
 	}
 })
 
-export default function LandingPage() {
+export default function LeftNav() {
 	const classes = useStyle()
 	return (
 		<Box>
@@ -31,12 +33,13 @@ export default function LandingPage() {
 				<Grid item />
 				<Grid item>
 					<Button variant='contained' startIcon={<AccessTimeIcon />}>
-						Home
+						<Link href='/'>Home</Link>
 					</Button>
 				</Grid>
 				<Grid item>
 					<Button variant='contained' startIcon={<AccessTimeIcon />}>
-						find classes
+						<Link href='/components/ClassesPage'>Find classes</Link>
+						{/* fix this link later to makes sure components doesn't show in the url */}
 					</Button>
 				</Grid>
 				<Grid item>

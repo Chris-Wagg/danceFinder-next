@@ -34,18 +34,18 @@ export default function HeaderBar() {
 							sx={{ mr: 2, color: 'white' }}>
 							<MenuIcon />
 						</IconButton>
-						<Link href='/' sx={{ cursor: 'pointer' }}>
-							<Typography
-								variant='h2'
-								component='div'
-								sx={{
-									flexGrow: 1,
-									cursor: 'pointer',
-									paddingTop: '20px'
-								}}>
-								danceFinder
-							</Typography>
-						</Link>
+						{/* <Link href='/' sx={{ cursor: 'pointer' }}> */}
+						<Typography
+							variant='h2'
+							component='div'
+							sx={{
+								flexGrow: 1,
+								cursor: 'pointer',
+								paddingTop: '20px'
+							}}>
+							danceFinder
+						</Typography>
+						{/* </Link> */}
 						<Button color='inherit'>Login</Button>
 					</Toolbar>
 				</AppBar>
