@@ -1,20 +1,20 @@
 import { Button, Box, Grid } from '@mui/material'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
 
 import LeftNav from './LeftNav'
+import CentralNav from './CentralNav'
 
 export default function LandingPage() {
 	return (
 		<Box>
 			<Box display='flex' flexDirection='column' alighItems='center'>
-				<Grid container>
-					<Grid item lg={3} md={3} sm={3} sx={{ marginBottom: '40px' }}>
+				<Grid container spacing={9}>
+					<Grid item lg={2} md={2} sm={2}>
 						<LeftNav />
 					</Grid>
-					<Grid item lg={3} md={3} sm={3} sx={{ marginBottom: '40px' }}>
-						<LeftNav />
+					<Grid item lg={7} md={7} sm={7}>
+						<CentralNav />
 					</Grid>
-					<Grid item lg={3} md={3} sm={3} sx={{ marginBottom: '40px' }}>
+					<Grid item lg={3} md={3} sm={3}>
 						<LeftNav />
 					</Grid>
 				</Grid>

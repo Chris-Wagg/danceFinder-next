@@ -25,15 +25,7 @@ export default function HeaderBar() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Box sx={{ flexGrow: 1 }}>
-				<AppBar
-					position='fixed'
-					elevation={0}
-					color='primary'
-					// sx={{
-					// 	width: `calc(100% - ${drawerWidth}px)`,
-					// 	ml: `${drawerWidth}px`
-					// }}
-				>
+				<AppBar position='fixed' elevation={0} color='primary'>
 					<Toolbar>
 						<IconButton
 							size='large'

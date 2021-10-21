@@ -6,8 +6,8 @@ const useStyle = makeStyles((theme) => {
 	return {
 		navBox: {
 			// background: '#090909',
-			border: '5px solid black',
-			width: '30vw'
+			border: '5px solid black'
+			// width: '30vw'
 		}
 	}
 })
@@ -18,7 +18,7 @@ export default function LandingPage() {
 		<Box>
 			<Grid
 				container
-				spacing={3}
+				spacing={5}
 				display='flex'
 				flexDirection='column'
 				justifyContent='center'
@@ -27,39 +27,36 @@ export default function LandingPage() {
 				<Grid item>
 					<h1>danceFinder</h1>
 				</Grid>
-				{/* <Grid item />
-				<Grid item /> */}
+				<Grid item />
+				<Grid item />
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
 						Home
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
 						find classes
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Events
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						find Events
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						My timetable
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						Find media
 					</Button>
 				</Grid>
-				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Media
-					</Button>
-				</Grid>
-				{/* <Grid item />
+
 				<Grid item />
-				<Grid item /> */}
+				<Grid item />
+				<Grid item />
+
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Media
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						Account stuff here
 					</Button>
 				</Grid>
 			</Grid>
