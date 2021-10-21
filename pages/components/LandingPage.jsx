@@ -1,4 +1,4 @@
-import { Button, Box, Grid } from '@mui/material'
+import { Button, Box, Grid, Toolbar } from '@mui/material'
 
 import LeftNav from './LeftNav'
 import CentralNav from './CentralNav'
@@ -9,6 +9,8 @@ export default function LandingPage() {
 	return (
 		<>
 			<HeaderBar />
+			<Toolbar />
+			<Toolbar />
 			<Box>
 				<Box display='flex' flexDirection='column' alighItems='center'>
 					<Grid container spacing={9}>
