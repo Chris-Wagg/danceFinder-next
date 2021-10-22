@@ -1,24 +1,26 @@
-import { Button, Box, Grid } from '@mui/material'
+import Link from 'next/link'
+
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { Button, Box, Grid } from '@mui/material'
 import { makeStyles } from '@material-ui/core'
 
 const useStyle = makeStyles((theme) => {
 	return {
 		navBox: {
 			// background: '#090909',
-			border: '5px solid black',
-			width: '30vw'
+			border: '5px solid black'
+			// width: '30vw'
 		}
 	}
 })
 
-export default function LandingPage() {
+export default function LeftNav() {
 	const classes = useStyle()
 	return (
 		<Box>
 			<Grid
 				container
-				spacing={3}
+				spacing={5}
 				display='flex'
 				flexDirection='column'
 				justifyContent='center'
@@ -30,36 +32,34 @@ export default function LandingPage() {
 				<Grid item />
 				<Grid item />
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Home
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						<Link href='/'>Home</Link>
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						find classes
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						<Link href='/components/ClassesPage'>Find classes</Link>
+						{/* fix this link later to makes sure components doesn't show in the url */}
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Events
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						find Events
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						My timetable
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						Find media
 					</Button>
 				</Grid>
-				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Media
-					</Button>
-				</Grid>
+
 				<Grid item />
 				<Grid item />
 				<Grid item />
+
 				<Grid item>
-					<Button variant='contained' endIcon={<AccessTimeIcon />}>
-						Media
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						Account stuff here
 					</Button>
 				</Grid>
 			</Grid>

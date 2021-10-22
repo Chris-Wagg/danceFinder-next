@@ -4,7 +4,7 @@ exports.up = function (knex) {
 		table.string('name')
 		table.string('userName')
 		table.string('emailAddress')
-		table.string('avatarUrl')
+		table.string('avatar')
 	})
 }
 

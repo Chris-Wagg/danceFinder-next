@@ -25,15 +25,7 @@ export default function HeaderBar() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Box sx={{ flexGrow: 1 }}>
-				<AppBar
-					position='fixed'
-					elevation={0}
-					color='primary'
-					// sx={{
-					// 	width: `calc(100% - ${drawerWidth}px)`,
-					// 	ml: `${drawerWidth}px`
-					// }}
-				>
+				<AppBar position='fixed' elevation={0} color='primary'>
 					<Toolbar>
 						<IconButton
 							size='large'
@@ -42,18 +34,18 @@ export default function HeaderBar() {
 							sx={{ mr: 2, color: 'white' }}>
 							<MenuIcon />
 						</IconButton>
-						<Link href='/' sx={{ cursor: 'pointer' }}>
-							<Typography
-								variant='h2'
-								component='div'
-								sx={{
-									flexGrow: 1,
-									cursor: 'pointer',
-									paddingTop: '20px'
-								}}>
-								danceFinder
-							</Typography>
-						</Link>
+						{/* <Link href='/' sx={{ cursor: 'pointer' }}> */}
+						<Typography
+							variant='h2'
+							component='div'
+							sx={{
+								flexGrow: 1,
+								cursor: 'pointer',
+								paddingTop: '20px'
+							}}>
+							danceFinder
+						</Typography>
+						{/* </Link> */}
 						<Button color='inherit'>Login</Button>
 					</Toolbar>
 				</AppBar>
