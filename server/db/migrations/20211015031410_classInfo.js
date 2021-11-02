@@ -3,6 +3,7 @@ exports.up = function (knex) {
 		table.increments('class_info_id').primary()
 		table.string('class_type')
 		table.string('class_level')
+		table.string('class_day')
 		table.string('class_time')
 		table.string('class_location')
 	})
