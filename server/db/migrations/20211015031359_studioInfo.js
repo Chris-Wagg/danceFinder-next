@@ -1,15 +1,13 @@
 exports.up = function (knex) {
-	return knex.schema.createTable('studioInfo', (table) => {
-		table.increment('studioInfoId').primary()
-		table.string('studioName')
-		table.string('studioAddress')
-		table.string('studioEmail')
-		table.string('studioPhone')
-		table.string('studioSocials')
-		table.string('studioMiscInfo')
+	return knex.schema.createTable('studio_info', (table) => {
+		table.increments('studio_info_id').primary()
+		table.string('studio_name')
+		table.string('studio_address')
+		table.string('studio_email')
+		table.string('studio_phone')
 	})
 }
 
 exports.down = function (knex) {
-	return knex.schema.dropTable('studioInfo')
+	return knex.schema.dropTable('studio_info')
 }
