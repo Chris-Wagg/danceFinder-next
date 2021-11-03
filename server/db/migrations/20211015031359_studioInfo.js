@@ -5,6 +5,10 @@ exports.up = function (knex) {
 		table.string('studio_address')
 		table.string('studio_email')
 		table.string('studio_phone')
+		table.string('class_types_offered')
+		table.string('school_age_levels_offered')
+		table.string('adult_levels_offered')
+		table.string('open_classes_offered')
 	})
 }
 
