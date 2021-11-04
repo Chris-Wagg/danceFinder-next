@@ -52,6 +52,11 @@ export default function LeftNav() {
 						Find media
 					</Button>
 				</Grid>
+				<Grid item>
+					<Button variant='contained' startIcon={<AccessTimeIcon />}>
+						Online resources
+					</Button>
+				</Grid>
 
 				<Grid item />
 				<Grid item />

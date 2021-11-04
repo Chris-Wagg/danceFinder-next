@@ -11,21 +11,43 @@ datasource db {
 }
 
 model userInfo {
-  id Int @id @default(autoincrement())
-  name String
-  userName String
+  id           Int         @id @default(autoincrement())
+  name         String
+  userName     String
   emailAddress String
-  avatar String
+  avatar       String
+  classes      ClassInfo[]
+  eventInfo    EventInfo[]
 }
 
 model studioInfo {
-  studioId Int @id @default(autoincrement())
-  studioName String
-  studioAddress String
-  studioEmail String
-  studioPhone Int
-  ClassTypeOffered String
+  studioId               Int    @id @default(autoincrement())
+  studioName             String
+  studioAddress          String
+  studioEmail            String
+  studioPhone            Int
+  ClassTypeOffered       String
   schoolAgeLevelsOffered String
-  adultLevelsOffered String
-  openClassesOffered String
+  adultLevelsOffered     String
+  openClassesOffered     String
+}
+
+model ClassInfo {
+  classId       Int       @id @default(autoincrement())
+  classType     String
+  classLevel    String
+  classTime     DateTime
+  classLocation String
+  userInfo      userInfo? @relation(fields: [userInfoId], references: [id])
+  userInfoId    Int?
+}
+
+model EventInfo {
+  eventId       Int      @id @default(autoincrement())
+  eventName     String
+  eventTime     DateTime
+  eventLocation String
+  eventInfo     String
+  users         userInfo @relation(fields: [userInfoId], references: [id])
+  userInfoId    Int
 }
