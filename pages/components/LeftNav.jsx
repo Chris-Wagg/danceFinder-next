@@ -8,8 +8,9 @@ const useStyle = makeStyles((theme) => {
 	return {
 		navBox: {
 			// background: '#090909',
-			border: '5px solid black'
-			// width: '30vw'
+			border: '5px solid black',
+			// width: '30vw',
+			margin: '1%'
 		}
 	}
 })
@@ -20,13 +21,11 @@ export default function LeftNav() {
 		<Box>
 			<Grid
 				container
-				spacing={5}
-				display='flex'
-				flexDirection='column'
-				justifyContent='center'
+				rowSpacing={4}
+				direction='column'
 				alignItems='center'
 				className={classes.navBox}>
-				<Grid item>
+				<Grid item rowSpacing={0}>
 					<h1>danceFinder</h1>
 				</Grid>
 				<Grid item />
@@ -62,7 +61,7 @@ export default function LeftNav() {
 				<Grid item />
 				<Grid item />
 
-				<Grid item>
+				<Grid item sx={{ marginBottom: '50px' }}>
 					<Button variant='contained' startIcon={<AccessTimeIcon />}>
 						Account stuff here
 					</Button>
