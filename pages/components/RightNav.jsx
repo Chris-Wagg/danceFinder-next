@@ -1,4 +1,4 @@
-import { Button, Box, Grid } from '@mui/material'
+import { Button, Box, Grid, Typography } from '@mui/material'
 import { makeStyles } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
@@ -11,7 +11,8 @@ const useStyle = makeStyles((theme) => {
 			border: '2px solid black',
 			margin: '1%',
 			borderRadius: '30px',
-			color: 'white'
+			color: 'white',
+			height: '80vh'
 		},
 		button: {
 			backgroundColor: 'white'
@@ -23,6 +24,11 @@ const theme = createTheme({
 	palette: {
 		primary: {
 			main: '#ffffff'
+		},
+		typography: {
+			h1: {
+				fontSize: [18]
+			}
 		}
 	}
 })
@@ -37,12 +43,12 @@ export default function RightNav() {
 						container
 						direction='row'
 						justifyContent='center'
-						columnSpacing={2}>
+						columnSpacing={5}>
 						<Grid item>
 							<Button
 								variant='outlined'
 								startIcon={<AccessTimeIcon />}
-								sx={{ margin: '10px' }}>
+								sx={{ marginTop: '30px' }}>
 								my Timetable
 							</Button>
 						</Grid>
@@ -51,23 +57,44 @@ export default function RightNav() {
 							<Button
 								variant='outlined'
 								startIcon={<AccessTimeIcon />}
-								sx={{ margin: '10px' }}>
+								sx={{ marginTop: '30px' }}>
 								my Events
 							</Button>
 						</Grid>
 					</Grid>
 
-					{/* </Box> */}
 					<Box>
-						<h1>right nav content here in a box test wrap</h1>
-						<Button
-							variant='outlined'
-							startIcon={<AccessTimeIcon />}
-							sx={{ margin: '10px' }}>
-							add thing
-						</Button>
+						<Grid container direction='column' alignItems='center' spacing={3}>
+							<Grid item>
+								<Typography> Monday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Tuesday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Wednesday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Thursday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Friday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Saturday </Typography>
+							</Grid>
+							<Grid item>
+								<Typography> Sunday </Typography>
+							</Grid>
+
+							<Button
+								variant='outlined'
+								startIcon={<AccessTimeIcon />}
+								sx={{ margin: '10px' }}>
+								add thing
+							</Button>
+						</Grid>
 					</Box>
-					{/* </Grid> */}
 				</Box>
 			</>
 		</ThemeProvider>

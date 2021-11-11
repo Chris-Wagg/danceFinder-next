@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Button, Box, Grid } from '@mui/material'
+import { Button, Box, Grid, Divider } from '@mui/material'
 import { makeStyles } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
@@ -14,7 +14,12 @@ const useStyle = makeStyles((theme) => {
 			border: '2px solid black',
 			margin: '1%',
 			borderRadius: '30px',
-			color: 'white'
+			color: 'white',
+			height: '80vh'
+		},
+		divider: {
+			color: 'white',
+			backgroundColor: 'white'
 		}
 	}
 })
