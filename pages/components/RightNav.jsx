@@ -63,8 +63,9 @@ export default function RightNav() {
 						</Grid>
 					</Grid>
 
-					<Box>
-						<Grid container direction='column' alignItems='center' spacing={3}>
+					<Box sx={{ marginTop: '50px' }}>
+						<Grid container direction='column' alignItems='center' spacing={9
+						}>
 							<Grid item>
 								<Typography> Monday </Typography>
 							</Grid>
