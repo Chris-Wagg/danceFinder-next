@@ -18,7 +18,6 @@ export default function LandingPage() {
 					</Grid>
 					<Grid item lg={7} md={7} sm={7}>
 						<CentralNav />
-						{/* This might need to change depending on the navigation */}
 					</Grid>
 					<Grid item lg={3} md={3} sm={3}>
 						<RightNav />

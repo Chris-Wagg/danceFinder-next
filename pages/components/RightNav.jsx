@@ -43,7 +43,7 @@ export default function RightNav() {
 						container
 						direction='row'
 						justifyContent='center'
-						columnSpacing={5}>
+						columnSpacing={3}>
 						<Grid item>
 							<Button
 								variant='outlined'
@@ -64,34 +64,40 @@ export default function RightNav() {
 					</Grid>
 
 					<Box sx={{ marginTop: '50px' }}>
-						<Grid container direction='column' alignItems='center' spacing={9
-						}>
-							<Grid item>
+						<Grid
+							container
+							direction='column'
+							alignItems='center'
+							justifyContent='center'
+							// spacing={8}
+						>
+							<Grid item marginBottom='30px'>
 								<Typography> Monday </Typography>
+								<Typography>test</Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Tuesday </Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Wednesday </Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Thursday </Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Friday </Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Saturday </Typography>
 							</Grid>
-							<Grid item>
+							<Grid item margin='30px 0px'>
 								<Typography> Sunday </Typography>
 							</Grid>
 
 							<Button
 								variant='outlined'
 								startIcon={<AccessTimeIcon />}
-								sx={{ margin: '10px' }}>
+								sx={{ margin: '5px' }}>
 								add thing
 							</Button>
 						</Grid>
