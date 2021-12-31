@@ -26,6 +26,33 @@ const ExpandMore = styled((props) => {
 	})
 }))
 
+
+
+const classes = {
+	classType: ['Jazz', 'Tap', 'HipHop', 'Lyrical', 'Ballet'],
+	agesOffered: {
+		schoolAge: ['Pre-school', 'Beginner', 'Intermediate', 'Advanced'],
+		adultClasses: ['Beginner', 'Intermediate', 'Advanced', 'Professional'],
+	},
+	openClasses: ['School age', 'Adult']
+}
+
+// const classTypeMap = function() {
+// 	const map = [...classes.classType]
+// 	console.log(map)
+// 	for (const item of map) {
+// 		return(`${item}, `)
+// 	}
+// }
+
+// const classTypeArr = function() {
+// 	const classArr = [...classes.classType]
+// 	for (const [i, el] of classArr.entries()) {
+// 	(`${i +1}: ${el}`)
+// 	}
+// 	return
+// }
+
 export default function ClassesCards() {
 	const [expanded, setExpanded] = useState(false)
 
@@ -54,21 +81,24 @@ export default function ClassesCards() {
 				</CardActions>
 				<Collapse in={expanded} timeout='auto' unmountOnExit>
 					<CardContent>
+
+
+
+
 						<Typography variant='h5'>Class types offered:</Typography>
-						<Typography>Jazz</Typography>
-						<Typography>Tap</Typography>
-						<Typography>HipHop</Typography>
-						<Typography>Lyrical</Typography>
-						<Typography>Ballet</Typography>
+						{/* <Typography>{classTypeMap()}</Typography> */}
+						{/* <Typography>{classTypeArr()}</Typography> */}
+						<Typography>{`${[...classes.classType]}`}</Typography>
+
+
+
+						
 						<Typography variant='h5'>Levels offered:</Typography>
 						<Typography variant='h6'>School age:</Typography>
-						<Typography>pre-school</Typography>
-						<Typography>Beginner</Typography>
-						<Typography>Intermediate</Typography>
-						<Typography>Advanced</Typography>
+						<Typography>{`${[...classes.agesOffered.schoolAge]}`}</Typography>
 						<Typography>Professional</Typography>
 						<Typography variant='h6'>Adult classes:</Typography>
-						<Typography>Beginner</Typography>
+						
 						<Typography>Intermediate</Typography>
 						<Typography>Advanced</Typography>
 						<Typography>Professional</Typography>
