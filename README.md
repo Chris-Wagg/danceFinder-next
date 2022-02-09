@@ -1,3 +1,8 @@
+Currently a work in progress. Currently trying to work on dom manipulation to bring elements in and out for interactivitty of the user and simplifying that process. Also looking into breaking away from using purely MUI for the visual components and moving back to using base CSS to again make the process easier.
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
