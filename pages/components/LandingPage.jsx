@@ -12,7 +12,7 @@ export default function LandingPage() {
 			<Toolbar />
 			<Toolbar />
 			<Box sx={{ marginLeft: '30px', marginRight: '30px' }}>
-				<Grid container direction='row' columnSpacing={5}>
+				<Grid container direction="row" columnSpacing={5}>
 					<Grid item lg={2} md={2} sm={2} sx={{ marginLeft: '0px' }}>
 						<LeftNav />
 					</Grid>

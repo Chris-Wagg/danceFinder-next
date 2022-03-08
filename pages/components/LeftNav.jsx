@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { Button, Box, Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
+import CentralNav from './CentralNav'
 
 const useStyle = makeStyles((theme) => {
 	return {
@@ -32,16 +31,6 @@ const theme = createTheme({
 		},
 	},
 })
-
-function TabPanel(props) {
-	const { children, value, index, ...other } = props
-
-	return (
-		<div hidden={value !== index} id={`simple-tabpanel-${index}`} {...other}>
-			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-		</div>
-	)
-}
 
 export default function LeftNav() {
 	const [selectedLeftTab, setSelectedLeftTab] = React.useState(0)
@@ -69,8 +58,8 @@ export default function LeftNav() {
 						onChange={handleChange}
 						orientation="vertical"
 					>
-						<Tab label="item one" />
-						<Tab label="item two" />
+						<Tab label="Home" />
+						<Tab label="Classes" />
 						<Tab label="item three" />
 						<Tab label="item four" />
 						<Tab label="item five" />
