@@ -5,7 +5,7 @@ import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { setLeftTabNum } from '../redux/counter'
+import { setLeftTabNum } from '../redux/tabNum'
 
 const useStyle = makeStyles((theme) => {
 	return {
@@ -41,6 +41,9 @@ export default function LeftNav() {
 
 	const classes = useStyle()
 	return (
+
+		const tabNum = useSelector((state) => state.)
+
 		<ThemeProvider theme={theme}>
 			<Box>
 				<Grid
@@ -58,9 +61,12 @@ export default function LeftNav() {
 						onChange={handleChange}
 						orientation="vertical"
 					>
-						<Tab label="Home" />
-						<Tab label="Classes" />
-						<Tab label="item three" />
+						<Tab label="Home" onClick={() => dispatch(setLeftTabNum(0))} />
+						<Tab label="Classes" onClick={() => dispatch(setLeftTabNum(1))} />
+						<Tab
+							label="item three"
+							onClick={() => dispatch(setLeftTabNum(2))}
+						/>
 						<Tab label="item four" />
 						<Tab label="item five" />
 					</Tabs>

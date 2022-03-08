@@ -6,13 +6,14 @@ export const tabSlice = createSlice({
 		tabNum: 0,
 	},
 	reducers: {
-		setLeftTabNum: (state) => {
+		//actions
+		setLeftTabNum: (state, action) => {
 			state.tabNum = action.payload
 		},
 	},
 })
 
 // Action creators are generated for each case reducer function
-export const { setLeftTabNum } = counterSlice.actions
+export const { setLeftTabNum } = tabSlice.actions
 
-export default counterSlice.reducer
+export default tabSlice.reducer

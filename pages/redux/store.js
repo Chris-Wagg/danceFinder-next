@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import counterReducer from './counter'
+import tabNumReducer from './tabNum'
 
 export const store = configureStore({
 	reducer: {
-		counter: counterReducer,
+		tabNum: tabNumReducer,
 	},
 })
