@@ -1,11 +1,11 @@
-import Link from 'next/link'
 import React from 'react'
 
 import { Box, Grid } from '@mui/material'
 import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
-import CentralNav from './CentralNav'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLeftTabNum } from '../redux/counter'
 
 const useStyle = makeStyles((theme) => {
 	return {
