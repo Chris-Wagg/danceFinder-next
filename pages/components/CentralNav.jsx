@@ -5,21 +5,21 @@ export default function CentralNav() {
 		<>
 			<Grid container>
 				<Grid item lg={12}>
-					<Box
+					{/* <Box
 						display='flex'
 						alignItems='center'
 						justifyContent='center'
 						sx={{ border: '2px solid blue' }}>
 						<h1> this is the feed nav</h1>
-					</Box>
+					</Box> */}
 					<Grid item lg={12}>
-						<Box
+						{/* <Box
 							display='flex'
 							alignItems='center'
 							justifyContent='center'
 							sx={{ border: '2px solid blue' }}>
 							<h1> feed contents </h1>
-						</Box>
+						</Box> */}
 					</Grid>
 				</Grid>
 			</Grid>

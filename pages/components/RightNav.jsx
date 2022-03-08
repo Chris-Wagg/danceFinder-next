@@ -1,8 +1,10 @@
-import { Button, Box, Grid, Typography } from '@mui/material'
-import { makeStyles } from '@material-ui/core'
+import React from 'react'
+
+import { Box, Grid } from '@mui/material'
+import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import Planner from './Planner'
 
 const useStyle = makeStyles((theme) => {
 	return {
@@ -12,28 +14,44 @@ const useStyle = makeStyles((theme) => {
 			margin: '1%',
 			borderRadius: '30px',
 			color: 'white',
-			height: '80vh'
+			height: '80vh',
 		},
 		button: {
-			backgroundColor: 'white'
-		}
+			backgroundColor: 'white',
+		},
 	}
 })
 
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#ffffff'
+			main: '#ffffff',
 		},
 		typography: {
 			h1: {
-				fontSize: [18]
-			}
-		}
-	}
+				fontSize: [18],
+			},
+		},
+	},
 })
 
+function TabPanel(props) {
+	const { children, value, index, ...other } = props
+
+	return (
+		<div hidden={value !== index} id={`simple-tabpanel-${index}`} {...other}>
+			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+		</div>
+	)
+}
+
 export default function RightNav() {
+	const [selectedTab, setSelectedTab] = React.useState(0)
+
+	const handleChange = (event, newValue) => {
+		setSelectedTab(newValue)
+	}
+
 	const classes = useStyle()
 	return (
 		<ThemeProvider theme={theme}>
@@ -41,88 +59,22 @@ export default function RightNav() {
 				<Box className={classes.rightNav}>
 					<Grid
 						container
-						direction='row'
-						justifyContent='center'
-						columnSpacing={3}>
+						direction="row"
+						justifyContent="center"
+						columnSpacing={3}
+					>
 						<Grid item>
-							<Button
-								variant='outlined'
-								startIcon={<AccessTimeIcon />}
-								sx={{ marginTop: '30px' }}>
-								my Timetable
-							</Button>
-						</Grid>
-
-						<Grid item>
-							<Button
-								variant='outlined'
-								startIcon={<AccessTimeIcon />}
-								sx={{ marginTop: '30px' }}>
-								my Events
-							</Button>
+							<Tabs value={selectedTab} onChange={handleChange}>
+								<Tab label="Item One">{/*  */}</Tab>
+								<Tab label="Item Two" />
+							</Tabs>
+							<TabPanel value={selectedTab} index={0}>
+								<Planner />
+							</TabPanel>
 						</Grid>
 					</Grid>
-
-					<Box sx={{ marginTop: '50px' }}>
-						<Grid
-							container
-							direction='column'
-							alignItems='center'
-							justifyContent='center'
-							// spacing={8}
-						>
-							<Grid item marginBottom='30px'>
-								<Typography> Monday </Typography>
-								<Typography>test</Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Tuesday </Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Wednesday </Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Thursday </Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Friday </Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Saturday </Typography>
-							</Grid>
-							<Grid item margin='30px 0px'>
-								<Typography> Sunday </Typography>
-							</Grid>
-
-							<Button
-								variant='outlined'
-								startIcon={<AccessTimeIcon />}
-								sx={{ margin: '5px' }}>
-								add thing
-							</Button>
-						</Grid>
-					</Box>
 				</Box>
 			</>
 		</ThemeProvider>
 	)
-}
-
-{
-	/* <Button
-					variant='outlined'
-					startIcon={<AccessTimeIcon />}
-					sx={{ margin: '10px' }}>
-					Messages
-				</Button> */
-}
-
-{
-	/* <Box
-							display='flex'
-							flexDirection='row'
-							justifyContent='space-evenly'
-							alignItems='center'
-							spacing={3}
-							className={classes.rightNav}> */
 }
