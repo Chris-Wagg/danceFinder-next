@@ -1,14 +1,14 @@
-import { Toolbar } from '@mui/material'
-import ClassesPage from './components/ClassesPage'
-import HeaderBar from './components/HeaderBar'
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
 import LandingPage from './components/LandingPage'
 
 export default function Home() {
 	return (
 		<>
-			{/* <HeaderBar /> */}
-			<LandingPage />
-			{/* <ClassesPage /> */}
+			<Provider store={store}>
+				<LandingPage />
+			</Provider>
 		</>
 	)
 }
