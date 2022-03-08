@@ -46,10 +46,10 @@ function TabPanel(props) {
 }
 
 export default function RightNav() {
-	const [selectedTab, setSelectedTab] = React.useState(0)
+	const [selectedRightTab, setSelectedRightTab] = React.useState(0)
 
 	const handleChange = (event, newValue) => {
-		setSelectedTab(newValue)
+		setSelectedRightTab(newValue)
 	}
 
 	const classes = useStyle()
@@ -64,11 +64,11 @@ export default function RightNav() {
 						columnSpacing={3}
 					>
 						<Grid item>
-							<Tabs value={selectedTab} onChange={handleChange}>
-								<Tab label="Item One">{/*  */}</Tab>
+							<Tabs value={selectedRightTab} onChange={handleChange}>
+								<Tab label="Item One" />
 								<Tab label="Item Two" />
 							</Tabs>
-							<TabPanel value={selectedTab} index={0}>
+							<TabPanel value={selectedRightTab} index={0}>
 								<Planner />
 							</TabPanel>
 						</Grid>
