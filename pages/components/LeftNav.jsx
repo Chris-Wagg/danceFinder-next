@@ -40,10 +40,11 @@ export default function LeftNav() {
 	}
 
 	const classes = useStyle()
+
+	const tabNum = useSelector((state) => state.tabNum.value) // useSelector reads the data from the store
+	const dispatch = useDispatch() // useDispatch will send data to the store (dispatch actions)
+
 	return (
-
-		const tabNum = useSelector((state) => state.)
-
 		<ThemeProvider theme={theme}>
 			<Box>
 				<Grid
@@ -67,8 +68,8 @@ export default function LeftNav() {
 							label="item three"
 							onClick={() => dispatch(setLeftTabNum(2))}
 						/>
-						<Tab label="item four" />
-						<Tab label="item five" />
+						<Tab label="item four" onClick={() => dispatch(setLeftTabNum(3))} />
+						<Tab label="item five" onClick={() => dispatch(setLeftTabNum(4))} />
 					</Tabs>
 				</Grid>
 			</Box>
