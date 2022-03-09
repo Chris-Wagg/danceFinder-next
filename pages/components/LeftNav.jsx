@@ -41,7 +41,6 @@ export default function LeftNav() {
 
 	const classes = useStyle()
 
-	const tabNum = useSelector((state) => state.tabNum.value) // useSelector reads the data from the store
 	const dispatch = useDispatch() // useDispatch will send data to the store (dispatch actions)
 
 	return (
