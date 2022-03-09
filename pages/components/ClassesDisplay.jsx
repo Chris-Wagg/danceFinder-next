@@ -5,11 +5,11 @@ export default function ClassesDisplay() {
 	return (
 		<>
 			<Box
-				display='flex'
-				flexDirection='row'
-				justifyContent='center'
-				flexWrap='wrap'>
-				{/*  */}
+				display="flex"
+				flexDirection="row"
+				justifyContent="center"
+				flexWrap="wrap"
+			>
 				<ClassesCards />
 			</Box>
 		</>
