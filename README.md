@@ -1,39 +1,24 @@
-Currently a work in progress. Currently trying to work on dom manipulation to bring elements in and out for interactivitty of the user and simplifying that process. Also looking into breaking away from using purely MUI for the visual components and moving back to using base CSS to again make the process easier.
+## What I'm working on
 
+- This is a current work in progress project. The end goal for this is to develop a full production app that will be used in the real world. Initially I would like to have a filter system for people to be able to find studio's and dance classes.
 
+- The final scope of the project would to be a social media site for dancers and studios to share and create content for each other.
 
+## What tech I have used
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- I initially started with a boiler plate using node and SQLite.
+- The second iteration of the project moved to Next.js to work with a new framework and test the inbuilt routing.
+- I then incorporated Prisma as the database to again work with new technology.
+- Redux toolkit was then added to deal with the global state management and work with a new piece of tech that I have no used before.
 
-## Getting Started
+## Still to do
 
-First, run the development server:
+- Integrate prisma further.
+- Begin implementing functionality.
+- Work on accessibility and responsivity.
+- Work on testing once functionality is added
+- Fix package vulnerabilities
 
-```bash
+## Available scripts
+
 npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
