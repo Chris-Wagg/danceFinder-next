@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Link from 'next/link'
+
 import { Box, Grid } from '@mui/material'
 import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
@@ -32,10 +34,20 @@ const theme = createTheme({
 	},
 })
 
+function TabPanel(props) {
+	const { children, value, index, ...other } = props
+
+	return (
+		<div hidden={value !== index} id={`simple-tabpanel-${index}`} {...other}>
+			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+		</div>
+	)
+}
+
 export default function LeftNav() {
 	const [selectedLeftTab, setSelectedLeftTab] = React.useState(0)
 
-	const handleChange = (event, newValue) => {
+	const handleChange = (e, newValue) => {
 		setSelectedLeftTab(newValue)
 	}
 
@@ -62,7 +74,11 @@ export default function LeftNav() {
 						orientation="vertical"
 					>
 						<Tab label="Home" onClick={() => dispatch(setLeftTabNum(0))} />
-						<Tab label="Classes" onClick={() => dispatch(setLeftTabNum(1))} />
+						<Tab
+							label="Classes"
+							onClick={() => dispatch(setLeftTabNum(1))}
+							// href="/components/ClassesPage"
+						></Tab>
 						<Tab
 							label="item three"
 							onClick={() => dispatch(setLeftTabNum(2))}
@@ -75,3 +91,5 @@ export default function LeftNav() {
 		</ThemeProvider>
 	)
 }
+
+// add TabPanels to have the dynamic changing of the components to hopefully fix the issue without needing to mess around with redux

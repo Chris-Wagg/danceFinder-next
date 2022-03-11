@@ -48,7 +48,7 @@ function TabPanel(props) {
 export default function RightNav() {
 	const [selectedRightTab, setSelectedRightTab] = React.useState(0)
 
-	const handleChange = (event, newValue) => {
+	const handleChange = (e, newValue) => {
 		setSelectedRightTab(newValue)
 	}
 
