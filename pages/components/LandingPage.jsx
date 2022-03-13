@@ -6,6 +6,17 @@ import CentralNav from './CentralNav'
 import RightNav from './RightNav'
 import HeaderBar from './HeaderBar'
 import ClassesDisplay from './ClassesPage'
+import tabNum from '../redux/tabNum'
+
+function TabPanel(props) {
+	const { children, value, index, ...other } = props
+
+	return (
+		<div hidden={value !== index} id={`simple-tabpanel-${index}`} {...other}>
+			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+		</div>
+	)
+}
 
 export default function LandingPage() {
 	const tabNumber = useSelector((state) => state.tabNum)
@@ -13,8 +24,6 @@ export default function LandingPage() {
 
 	return (
 		<>
-			{tabNumber === 0 && <CentralNav />}
-
 			<HeaderBar />
 			<Toolbar />
 			<Toolbar />
@@ -24,9 +33,12 @@ export default function LandingPage() {
 						<LeftNav />
 					</Grid>
 					<Grid item lg={7} md={7} sm={7}>
+						<TabPanel value={tabNum} index={0}>
+							<CentralNav />
+						</TabPanel>
+						{/* 
 						{tabNumber === 0 && <CentralNav />}
-						{tabNumber === 1 && <ClassesDisplay />}
-						{/* <CentralNav /> */}
+						{tabNumber === 1 && <ClassesDisplay />} */}
 					</Grid>
 					<Grid item lg={3} md={3} sm={3}>
 						<RightNav />
