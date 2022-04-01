@@ -33,7 +33,7 @@ export default function HeaderBar() {
 							aria-label="menu"
 							sx={{ mr: 2, color: 'white' }}
 						>
-							<MenuIcon />
+							{/* <MenuIcon /> */}
 						</IconButton>
 						<Typography
 							variant="h2"
@@ -47,6 +47,9 @@ export default function HeaderBar() {
 							danceFinder
 						</Typography>
 						<Button color="inherit">Login</Button>
+						<Button color="inherit" href="./components/AddInfoPage">
+							Add studio
+						</Button>
 					</Toolbar>
 				</AppBar>
 			</Box>

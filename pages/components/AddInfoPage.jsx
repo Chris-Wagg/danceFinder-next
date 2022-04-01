@@ -1,13 +1,12 @@
 import React from 'react'
-import { Box, Grid, Toolbar } from '@mui/material'
 import { useSelector } from 'react-redux'
 
 import HeaderBar from './HeaderBar'
 
+import { Box, Grid, Toolbar, TextField, Button, FormGroup } from '@mui/material'
 import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
-import Planner from './Planner'
 import ClassesDisplay from './ClassesDisplay'
 
 const useStyle = makeStyles((theme) => {
@@ -56,15 +55,11 @@ function TabPanel(props) {
 	)
 }
 
-export default function MainPageTest() {
-	const tabNumber = useSelector((state) => state.tabNum)
+export default function AddInfoPage() {
+	// const tabNumber = useSelector((state) => state.tabNum)
 
-	const [selectedRightTab, setSelectedRightTab] = React.useState(0)
 	const [selectedLeftTab, setSelectedLeftTab] = React.useState(0)
 
-	const handleChangeRight = (e, newValueR) => {
-		setSelectedRightTab(newValueR)
-	}
 	const handleChangeLeft = (e, newValueL) => {
 		setSelectedLeftTab(newValueL)
 	}
@@ -96,8 +91,8 @@ export default function MainPageTest() {
 										onChange={handleChangeLeft}
 										orientation="vertical"
 									>
-										<Tab label="Home" />
-										<Tab label="Classes" />
+										<Tab label="Add Classes" />
+										<Tab label="item two" />
 										<Tab label="item three" />
 										<Tab label="item four" />
 										<Tab label="item five" />
@@ -107,54 +102,22 @@ export default function MainPageTest() {
 						</Grid>
 						<Grid item lg={7} md={7} sm={7}>
 							<TabPanel value={selectedLeftTab} index={0}>
-								<Grid container>
-									<Grid item lg={12}>
-										<TabPanel value={selectedLeftTab} index={0}>
-											<Box
-												display="flex"
-												alignItems="center"
-												justifyContent="center"
-												sx={{ border: '2px solid blue' }}
-											>
-												<h1> this is the feed nav</h1>
-											</Box>
-										</TabPanel>
-										<Grid item lg={12}>
-											<Box
-												display="flex"
-												alignItems="center"
-												justifyContent="center"
-												sx={{ border: '2px solid blue' }}
-											>
-												<h1> feed contents </h1>
-											</Box>
-										</Grid>
-									</Grid>
-								</Grid>
+								<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+									<form>
+										<TextField
+											onChange={(
+												e //crud funciton here
+											) => e.target.value}
+											id="outlined-basic"
+											label="test field"
+											variant="outlined"
+											color="secondary"
+										/>
+
+										<Button variant="contained">Submit</Button>
+									</form>
+								</Box>
 							</TabPanel>
-							<TabPanel value={selectedLeftTab} index={1}>
-								<ClassesDisplay />
-							</TabPanel>
-						</Grid>
-						<Grid item lg={3} md={3} sm={3}>
-							<Box className={classes.rightNav}>
-								<Grid
-									container
-									direction="row"
-									justifyContent="center"
-									columnSpacing={3}
-								>
-									<Grid item>
-										<Tabs value={selectedRightTab} onChange={handleChangeRight}>
-											<Tab label="Item One" />
-											<Tab label="Item Two" />
-										</Tabs>
-										<TabPanel value={selectedRightTab} index={0}>
-											<Planner />
-										</TabPanel>
-									</Grid>
-								</Grid>
-							</Box>
 						</Grid>
 					</Grid>
 				</Box>

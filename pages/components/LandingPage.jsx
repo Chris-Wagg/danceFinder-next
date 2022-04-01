@@ -36,9 +36,6 @@ export default function LandingPage() {
 						<TabPanel value={tabNum} index={0}>
 							<CentralNav />
 						</TabPanel>
-						{/* 
-						{tabNumber === 0 && <CentralNav />}
-						{tabNumber === 1 && <ClassesDisplay />} */}
 					</Grid>
 					<Grid item lg={3} md={3} sm={3}>
 						<RightNav />
