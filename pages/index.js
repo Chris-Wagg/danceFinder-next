@@ -1,6 +1,8 @@
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
 
+import { PrismaClient } from '@prisma/client'
+
 import LandingPage from './components/LandingPage'
 import MainPageTest from './components/MainPageTest'
 

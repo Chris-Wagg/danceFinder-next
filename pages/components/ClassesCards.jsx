@@ -11,9 +11,10 @@ import {
 	Typography,
 	styled,
 	IconButton,
-	Collapse
+	Collapse,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { prisma } from '.prisma/client'
 
 const ExpandMore = styled((props) => {
 	const { expand, ...other } = props
@@ -22,11 +23,9 @@ const ExpandMore = styled((props) => {
 	transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
 	marginLeft: 'auto',
 	transition: theme.transitions.create('transform', {
-		duration: theme.transitions.duration.shortest
-	})
+		duration: theme.transitions.duration.shortest,
+	}),
 }))
-
-
 
 const classes = {
 	classType: ['Jazz', 'Tap', 'HipHop', 'Lyrical', 'Ballet'],
@@ -34,26 +33,20 @@ const classes = {
 		schoolAge: ['Pre-school', 'Beginner', 'Intermediate', 'Advanced'],
 		adultClasses: ['Beginner', 'Intermediate', 'Advanced', 'Professional'],
 	},
-	openClasses: ['School age', 'Adult']
+	openClasses: ['School age', 'Adult'],
 }
 
-// const classTypeMap = function() {
-// 	const map = [...classes.classType]
-// 	console.log(map)
-// 	for (const item of map) {
-// 		return(`${item}, `)
-// 	}
-// }
+export async function getServerSideProps() {
+	const testInfo = await prisma.testInfo.findMany()
+	return {
+		props: {
+			testInfo: testInfo,
+		},
+	}
+}
 
-// const classTypeArr = function() {
-// 	const classArr = [...classes.classType]
-// 	for (const [i, el] of classArr.entries()) {
-// 	(`${i +1}: ${el}`)
-// 	}
-// 	return
-// }
-
-export default function ClassesCards() {
+/** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
+export default function ClassesCards(props) {
 	const [expanded, setExpanded] = useState(false)
 
 	const handleExpandClick = () => {
@@ -62,47 +55,39 @@ export default function ClassesCards() {
 	return (
 		<>
 			<Card lg={4} sx={{ margin: '20px', minWidth: '300px' }}>
-				<CardMedia component='img' height='140' image='#' alt='studio logo' />
+				<CardMedia component="img" height="140" image="#" alt="studio logo" />
 				<CardContent>
-					<Typography gutterbloom variant='h3'>
+					<Typography gutterbloom variant="h3">
 						Studio Name
 					</Typography>
-					<Typography variant='h5'>this is studio information</Typography>
+					<Typography variant="h5">this is studio information</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size='small'>Go to website</Button>
+					<Button size="small">Go to website</Button>
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}
 						aria-expanded={expanded}
-						aria-label='show more'>
+						aria-label="show more"
+					>
 						<ExpandMoreIcon />
 					</ExpandMore>
 				</CardActions>
-				<Collapse in={expanded} timeout='auto' unmountOnExit>
+				<Collapse in={expanded} timeout="auto" unmountOnExit>
 					<CardContent>
-
-
-
-
-						<Typography variant='h5'>Class types offered:</Typography>
-						{/* <Typography>{classTypeMap()}</Typography> */}
-						{/* <Typography>{classTypeArr()}</Typography> */}
+						<Typography variant="h5">Class types offered:</Typography>
 						<Typography>{`${[...classes.classType]}`}</Typography>
 
-
-
-						
-						<Typography variant='h5'>Levels offered:</Typography>
-						<Typography variant='h6'>School age:</Typography>
+						<Typography variant="h5">Levels offered:</Typography>
+						<Typography variant="h6">School age:</Typography>
 						<Typography>{`${[...classes.agesOffered.schoolAge]}`}</Typography>
 						<Typography>Professional</Typography>
-						<Typography variant='h6'>Adult classes:</Typography>
-						
+						<Typography variant="h6">Adult classes:</Typography>
+
 						<Typography>Intermediate</Typography>
 						<Typography>Advanced</Typography>
 						<Typography>Professional</Typography>
-						<Typography variant='h6'>Open classes:</Typography>
+						<Typography variant="h6">Open classes:</Typography>
 						<Typography>School age</Typography>
 						<Typography>Adult</Typography>
 					</CardContent>
