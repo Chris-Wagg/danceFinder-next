@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import MenuIcon from '@mui/icons-material/Menu'
 import {
 	AppBar,
 	Box,
@@ -32,9 +30,7 @@ export default function HeaderBar() {
 							edge="start"
 							aria-label="menu"
 							sx={{ mr: 2, color: 'white' }}
-						>
-							{/* <MenuIcon /> */}
-						</IconButton>
+						></IconButton>
 						<Typography
 							variant="h2"
 							component="div"

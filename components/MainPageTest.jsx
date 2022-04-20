@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Grid, Toolbar } from '@mui/material'
-import { useSelector } from 'react-redux'
+import { TestInfo, Prisma } from '@prisma/client'
 
 import HeaderBar from './HeaderBar'
 
@@ -56,9 +56,16 @@ function TabPanel(props) {
 	)
 }
 
-export default function MainPageTest() {
-	const tabNumber = useSelector((state) => state.tabNum)
+// export default async function getServerSideProps() {
+// 	const info = await prisma.testInfo.findMany()
+// 	return {
+// 		props: {
+// 			info: info
+// 		}
+// 	}
+// }
 
+export default function MainPageTest(props) {
 	const [selectedRightTab, setSelectedRightTab] = React.useState(0)
 	const [selectedLeftTab, setSelectedLeftTab] = React.useState(0)
 
@@ -73,6 +80,7 @@ export default function MainPageTest() {
 
 	return (
 		<>
+			{/* {console.log(props.testInfo)} */}
 			<ThemeProvider theme={theme}>
 				<HeaderBar />
 				<Toolbar />
@@ -116,7 +124,7 @@ export default function MainPageTest() {
 												justifyContent="center"
 												sx={{ border: '2px solid blue' }}
 											>
-												<h1> this is the feed nav</h1>
+												{/* <h1> {props.testInfo.testTitle}</h1> */}
 											</Box>
 										</TabPanel>
 										<Grid item lg={12}>
@@ -126,7 +134,7 @@ export default function MainPageTest() {
 												justifyContent="center"
 												sx={{ border: '2px solid blue' }}
 											>
-												<h1> feed contents </h1>
+												{/* <h1> {props.testInfo.testContent} </h1> */}
 											</Box>
 										</Grid>
 									</Grid>

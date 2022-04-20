@@ -46,6 +46,7 @@ export async function getServerSideProps() {
 }
 
 /** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
+
 export default function ClassesCards(props) {
 	const [expanded, setExpanded] = useState(false)
 

@@ -1,6 +1,8 @@
 import { Grid, Box } from '@mui/material'
+// import { TestInfo } from '@prisma/client'
 
-export default function CentralNav() {
+export default function CentralNav(props) {
+	// const testInfo = props.TestInfo
 	return (
 		<>
 			<Grid container>
@@ -11,7 +13,7 @@ export default function CentralNav() {
 						justifyContent="center"
 						sx={{ border: '2px solid blue' }}
 					>
-						<h1> this is the feed nav</h1>
+						<h1> {props.testInfo.testTitle}</h1>
 					</Box>
 					<Grid item lg={12}>
 						<Box
@@ -20,7 +22,7 @@ export default function CentralNav() {
 							justifyContent="center"
 							sx={{ border: '2px solid blue' }}
 						>
-							<h1> feed contents </h1>
+							<h1> {props.testInfo.testContent} </h1>
 						</Box>
 					</Grid>
 				</Grid>
