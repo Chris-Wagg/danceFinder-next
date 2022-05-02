@@ -8,8 +8,8 @@
 
 - I initially started with a boiler plate using node and SQLite.
 - The second iteration of the project moved to Next.js to work with a new framework and test the inbuilt routing.
-- I then incorporated Prisma as the database to again work with new technology.
-- Redux toolkit was then added to deal with the global state management and work with a new piece of tech that I have no used before.
+- I then incorporated Prisma as the database to again work with a new technology.
+- Redux toolkit was then added to deal with the global state management and work with a new piece of tech that I have not used before.
 
 ## Still to do
 
