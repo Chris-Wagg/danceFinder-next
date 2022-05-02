@@ -3,11 +3,21 @@ import { useSelector } from 'react-redux'
 
 import HeaderBar from './HeaderBar'
 
-import { Box, Grid, Toolbar, TextField, Button, FormGroup } from '@mui/material'
+import {
+	Box,
+	Grid,
+	Toolbar,
+	TextField,
+	Button,
+	FormGroup,
+	FormControlLabel,
+	Checkbox,
+} from '@mui/material'
 import { makeStyles, Tabs, Tab } from '@material-ui/core'
 import { createTheme, ThemeProvider } from '@mui/material'
 
 import ClassesDisplay from './ClassesDisplay'
+import MultipleSelectChip from './DanceStyleSelector'
 
 const useStyle = makeStyles((theme) => {
 	return {
@@ -69,7 +79,6 @@ export default function AddInfoPage() {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<HeaderBar />
 				<Toolbar />
 				<Toolbar />
 				<Box sx={{ marginLeft: '30px', marginRight: '30px' }}>
@@ -103,7 +112,9 @@ export default function AddInfoPage() {
 						<Grid item lg={7} md={7} sm={7}>
 							<TabPanel value={selectedLeftTab} index={0}>
 								<Box sx={{ display: 'flex', flexDirection: 'column' }}>
-									<form>
+									<MultipleSelectChip />
+
+									{/* <form>
 										<TextField
 											onChange={(
 												e //crud funciton here
@@ -115,7 +126,7 @@ export default function AddInfoPage() {
 										/>
 
 										<Button variant="contained">Submit</Button>
-									</form>
+									</form> */}
 								</Box>
 							</TabPanel>
 						</Grid>
