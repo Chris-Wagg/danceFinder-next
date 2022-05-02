@@ -13,8 +13,8 @@
 
 ## Still to do
 
-- Integrate prisma static and serverside props.
-- Begin implementing CRUD functionality.
+- Implement Next.js static and serverside props functionality.
+- Begin implementing Prisma CRUD functionality.
 - Work on accessibility and responsivity.
 - Work on testing once functionality is added
 - Fix package vulnerabilities
