@@ -13,8 +13,8 @@
 
 ## Still to do
 
-- Integrate prisma further.
-- Begin implementing functionality.
+- Integrate prisma static and serverside props.
+- Begin implementing CRUD functionality.
 - Work on accessibility and responsivity.
 - Work on testing once functionality is added
 - Fix package vulnerabilities
